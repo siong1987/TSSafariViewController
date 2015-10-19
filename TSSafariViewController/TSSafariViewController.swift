@@ -19,7 +19,7 @@ extension TSSafariViewController {
 
 }
 
-class TSSafariViewController: SFSafariViewController, SFSafariViewControllerDelegate, UIViewControllerTransitioningDelegate {
+public class TSSafariViewController: SFSafariViewController, SFSafariViewControllerDelegate, UIViewControllerTransitioningDelegate {
 
     var safariDelegate: TSSafariViewControllerDelegate?
     let animator = TSEdgeSwipeBackAnimator()
@@ -62,7 +62,7 @@ class TSSafariViewController: SFSafariViewController, SFSafariViewControllerDele
         self.transitioningDelegate = self
     }
 
-    override func viewDidAppear(animated: Bool) {
+    public override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
         let recognizer = UIScreenEdgePanGestureRecognizer(target: self, action: "handleGesture:")
@@ -85,34 +85,34 @@ class TSSafariViewController: SFSafariViewController, SFSafariViewControllerDele
 
     // MARK: - Safari view controller delegate
 
-    func safariViewControllerDidFinish(controller: SFSafariViewController) {
+    public func safariViewControllerDidFinish(controller: SFSafariViewController) {
         self.dismissViewControllerAnimated(true, completion: nil)
         self.safariDelegate?.safariViewControllerDidFinish(self)
     }
 
-    func safariViewController(controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
+    public func safariViewController(controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
         self.safariDelegate?.safariViewController(self, didCompleteInitialLoad: didLoadSuccessfully)
     }
 
-    func safariViewController(controller: SFSafariViewController, activityItemsForURL URL: NSURL, title: String?) -> [UIActivity] {
+    public func safariViewController(controller: SFSafariViewController, activityItemsForURL URL: NSURL, title: String?) -> [UIActivity] {
         return (self.safariDelegate?.safariViewController(self, activityItemsForURL: URL, title: title))!
     }
 
     // MARK: - View controller transition delegate
 
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self._superView = presenting.view
 
         animator.dismissing = false
         return animator
     }
 
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    public func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animator.dismissing = true
         return animator
     }
 
-    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    public func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return self.animator.percentageDriven ? self.animator : nil
     }
 
