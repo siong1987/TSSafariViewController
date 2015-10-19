@@ -50,7 +50,7 @@ For the reference on how to use the delegate methods, check out the [SFSafariVie
 - [ ] Proper shadow animation (Opacity fades along with the view)
 - [ ] Better push/pop animation
 
-## References
+## Thanks
 
 - [Push / Pop modal SFSafariViewController](http://www.stringcode.co.uk/push-pop-modal-sfsafariviewcontroller-hacking-swipe-from-edge-gesture/)
 - [SCSafariViewController GitHub](https://github.com/stringcode86/SCSafariViewController)
