@@ -1,6 +1,23 @@
 # TSSafariViewController
 
-SFSafariViewController but with push/pop animation.
+In iOS 9, Apple introduced `SFSafariViewController` which supports
+native Safari features within the app.  But you have to present
+`SFSafariViewController` modally in order to prevent the loss of default
+bar behavior.
+
+`TSSafariViewController` is created in order to prevent the above problem.
+It supports all `SFSafariViewController` features but with proper
+push/pop presenting animation.
+
+## Installation
+
+#### Cocoapods
+
+Add the following line to your Podfile.
+
+```
+pod "TSSafariViewController", "~> 1.0"
+```
 
 ## Usage
 
