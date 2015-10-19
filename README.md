@@ -9,6 +9,10 @@ bar behavior.
 It supports all `SFSafariViewController` features but with proper
 push/pop presenting animation.
 
+## Demo
+
+![TSSafariViewController Example](Assets/Demo.gif)
+
 ## Installation
 
 #### Cocoapods
