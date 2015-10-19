@@ -47,8 +47,8 @@ For the reference on how to use the delegate methods, check out the [SFSafariVie
 
 ## TODO
 
-- [ ] Better push/pop animation with proper shadow animation (Opacity
-  fades along with the view)
+- [ ] Proper shadow animation (Opacity fades along with the view)
+- [ ] Better push/pop animation
 
 ## References
 
